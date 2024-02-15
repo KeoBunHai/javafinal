@@ -1,0 +1,40 @@
+import java.util.Scanner;
+import java.util.ArrayList;
+public class Main  {
+    public static void main(String[] args) {
+         Scanner input=new Scanner(System.in);
+         ArrayList<Integer> numbers = new ArrayList<>();
+         while(true) {
+
+
+             System.out.println("1.Input a list of numbers ");
+             System.out.println("2.view a list of numbers ");
+             System.out.println("Your choice :");
+             int choice = input.nextInt();
+             System.out.println("=================================");
+
+             switch (choice) {
+                 case 1:
+                     System.out.println("Input a list of numbers :");
+                     while (input.hasNextInt()) {
+                         int number = input.nextInt();
+                         if (number < 0) {
+                             break;
+                         }
+                         numbers.add(number);
+                     }
+                     break;
+                 case 2:
+                     System.out.println("View all Input numbers:");
+                     for (int number : numbers) {
+                         System.out.println(number);
+                     }
+                     break;
+             }
+
+         }
+
+        //input.close();
+    }
+
+}
